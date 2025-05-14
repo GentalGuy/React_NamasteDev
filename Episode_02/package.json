@@ -1,0 +1,29 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is Episode 2 by Akshay Saini(deep learning React)",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GentalGuy/React_NamasteDev.git"
+  },
+  "keywords": [],
+  "author": "Gurkirat Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GentalGuy/React_NamasteDev/issues"
+  },
+  "homepage": "https://github.com/GentalGuy/React_NamasteDev#readme",
+  "devDependencies": {
+    "parcel": "^2.15.0"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browerslist": [
+    "last 2 versions"
+  ]
+}
