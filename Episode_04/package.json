@@ -1,0 +1,20 @@
+{
+  "name": "episode_04",
+  "version": "1.0.0",
+  "description": "talk is cheap, Show me the code",
+
+  "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Gurkirat Singh",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.0"
+  }
+}
