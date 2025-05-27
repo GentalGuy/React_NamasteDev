@@ -30,6 +30,7 @@ const Body = () => {
     setFilteredCopy(filteredNames)
 
   }
+  
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
