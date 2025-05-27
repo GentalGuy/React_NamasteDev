@@ -7,6 +7,10 @@ import Error from "../components/Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
 import Cart from "../components/Cart";
 import RestaurantMenu from "../components/RestaurantMenu";
+import UserClass from "../components/UserClass";
+import Login from "../components/Login";
+import Register from "../components/Register";
+import ProtectedRoutes from "../services/ProtectedRoutes";
 
 const AppLayout = () => {
   return (
@@ -20,30 +24,48 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <ProtectedRoutes />,
     children: [
       {
         path: "/",
-        element: <Body />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/cart",
-        element: <Cart />,
-      },
-      {
-        path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
+        element: <AppLayout />,
+        children: [
+          {
+            path: "/",
+            element: <Body />,
+          },
+          {
+            path: "/about",
+            element: <About />,
+          },
+          {
+            path: "/contact",
+            element: <Contact />,
+          },
+          {
+            path: "/cart",
+            element: <Cart />,
+          },
+          {
+            path: "/restaurants/:resId",
+            element: <RestaurantMenu />,
+          },
+          {
+            path: "/user",
+            element: <UserClass prop={"user"} />,
+          },
+        ],
+        errorElement: <Error />,
       },
     ],
-    errorElement: <Error />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
