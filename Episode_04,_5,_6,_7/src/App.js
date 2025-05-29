@@ -50,10 +50,7 @@ const appRouter = createBrowserRouter([
             path: "/restaurants/:resId",
             element: <RestaurantMenu />,
           },
-          {
-            path: "/user",
-            element: <UserClass prop={"user"} />,
-          },
+
         ],
         errorElement: <Error />,
       },

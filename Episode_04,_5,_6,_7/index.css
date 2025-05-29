@@ -226,3 +226,16 @@ select.input-error {
 .login-container .error {
   color: #fc8181;
 }
+
+
+.user-class {
+  border: 1px solid black;
+  width: 300px;
+  margin: 100px;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
