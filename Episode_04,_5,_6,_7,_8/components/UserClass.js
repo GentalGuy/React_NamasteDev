@@ -7,7 +7,6 @@ class UserClass extends React.Component {
       count: 0,
     };
   }
-
   render() {
     const { name, location } = this.props;
     const { count } = this.state;
