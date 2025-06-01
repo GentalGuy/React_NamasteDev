@@ -14,7 +14,7 @@ const Body = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchData(); 
   }, []);
   const fetchData = async () => {
     const data = await fetch(
@@ -38,7 +38,7 @@ const Body = () => {
   const checkInternet = useInternetCheck();
 
   if (checkInternet === false) {
-    return (<h1>Please, Check your internet connection</h1>)
+    return (<h1 className="no-internet">Please, Check your internet connection</h1>)
   }
 
   return listOfRestaurant.length === 0 ? (

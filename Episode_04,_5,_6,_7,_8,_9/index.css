@@ -239,3 +239,7 @@ select.input-error {
   justify-content: center;
   align-items: center;
 }
+
+.no-internet{
+  font-size: 5vw;
+}

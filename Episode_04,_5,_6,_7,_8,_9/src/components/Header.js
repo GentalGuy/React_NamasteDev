@@ -1,5 +1,7 @@
-import { LOGO_URL } from "../src/utils/constants";
+import { LOGO_URL } from "../utils/constants";
 import { Link, useNavigate } from "react-router";
+import useInternetCheck from "../utils/useInternetCheck";
+import { use } from "react";
 const Header = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -7,6 +9,7 @@ const Header = () => {
     localStorage.removeItem("loggedin");
     navigate("/login");
   };
+  const checkInternet = useInternetCheck();
   return (
     <div className="header">
       <div className="logo-container">
@@ -15,6 +18,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online:{checkInternet ? "✅" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -26,6 +30,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/cart">Cart</Link>
+          </li>
+          <li>
+            <Link to="/grocery">Grocery</Link>
           </li>
           <button
             style={{ background: `red` }}
