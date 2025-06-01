@@ -10,7 +10,7 @@ import RestaurantMenu from "../components/RestaurantMenu";
 import UserClass from "../components/UserClass";
 import Login from "../components/Login";
 import Register from "../components/Register";
-import ProtectedRoutes from "../services/ProtectedRoutes";
+import ProtectedRoutes from "./services/ProtectedRoutes";
 
 const AppLayout = () => {
   return (
