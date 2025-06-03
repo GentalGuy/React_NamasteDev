@@ -11,13 +11,13 @@ const Header = () => {
   };
   const checkInternet = useInternetCheck();
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
-        <h4>Welcome, {user.name}</h4>
+    <div className="header h-30 flex justify-between items-center shadow-xl">
+      <div className="logo-container h-full flex justify-center items-center overflow-hidden">
+        <img className="logo w-45" src={LOGO_URL} />
+        <h4 className="bg-amber-200 p-2 rounded">Welcome, {user.name}</h4>
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="flex gap-6 cursor-pointer text-xl items-center p-4 m-4">
           <li>Online:{checkInternet ? "✅" : "🔴"}</li>
           <li>
             <Link to="/">Home</Link>
@@ -37,7 +37,7 @@ const Header = () => {
           <button
             style={{ background: `red` }}
             onClick={handleClick}
-            className="login"
+            className="login cursor-pointer py-2 px-3 rounded text-white font-light"
           >
             Log out
           </button>

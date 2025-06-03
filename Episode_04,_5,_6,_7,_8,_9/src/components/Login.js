@@ -19,11 +19,12 @@ const Login = () => {
                     }
   }
   return (
-    <div className="login-page">
-      <div className="login-container">
-        <h1>Login</h1>
-        <form onSubmit={handleLogin}>
+    <div className="login-page  w-full h-full absolute top-[50%] left-[50%] flex justify-center items-center -translate-x-[50%] -translate-y-[50%]">
+      <div className="login-container w-120 h-[50%] bg-gray-100 flex flex-col justify-around items-center rounded-3xl ">
+        <h1 className="text-3xl font-semibold">Login</h1>
+        <form className="flex flex-col justify-center " onSubmit={handleLogin}>
           <input
+          className="border-1 border-gray-400 p-2 rounded"
             value={input.email}
             onChange={(e) =>
               setInput({ ...input, [e.target.name]: e.target.value })
@@ -34,9 +35,10 @@ const Login = () => {
             placeholder="abc@gmail.com"
           ></input>
           <br></br>
-          <label htmlFor="email">Your Email</label>
+          <label className="pb-10" htmlFor="email">Your Email</label>
           <br></br>
           <input
+          className="border-1 border-gray-400 p-2 rounded"
             value={input.password}
             onChange={(e) =>
               setInput({ ...input, [e.target.name]: e.target.value })
@@ -47,12 +49,12 @@ const Login = () => {
             placeholder="password"
           ></input>
           <br></br>
-          <label htmlFor="password">Password</label>
-          <button type="submit"  className="login">Login</button>
-          <p>
-            Don't have an account?
-            <Link className="login-link" to="/register">
-              Register here
+          <label  className="pb-10" htmlFor="password">Password</label>
+          <button className="px-3 py-2 cursor-pointer hover:bg-blue-500 bg-blue-400 rounded " type="submit" >Login</button>
+          <p className="opacity-70 mt-2">
+            Don't have an account? 
+            <Link className="login-link font-bold opacity-100" to="/register">
+               Register here
             </Link>
           </p>
         </form>

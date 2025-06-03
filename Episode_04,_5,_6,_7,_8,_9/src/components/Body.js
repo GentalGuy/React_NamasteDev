@@ -44,19 +44,21 @@ const Body = () => {
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <button onClick={() => filterList()} className="filter-btn">
+    <div className="body flex flex-col p-10 w-full  ">
+      <div className="filter flex gap-25 mb-10">
+        <button onClick={() => filterList()} className="filter-btn px-3 cursor-pointer py-2 bg-gray-500 text-white rounded">
           Top Rated Restaurants
         </button>
-        <div className="search">
+        <div className="search flex gap-5">
           <input
             type="text"
             placeholder="Search..."
             value={search}
+            className="bg-gray-100 w-90 p-1 rounded border-1 border-gray-400"
             onChange={(e) => setSearch(e.target.value)}
           />
           <button
+          className="px-3 py-2 cursor-pointer bg-blue-600 rounded text-white"
             onClick={() => {
               searchItems();
             }}
@@ -65,7 +67,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex gap-20 flex-wrap ">
         {listOfRestaurant &&
           filteredCopy.map((restaurant) => {
             return (
