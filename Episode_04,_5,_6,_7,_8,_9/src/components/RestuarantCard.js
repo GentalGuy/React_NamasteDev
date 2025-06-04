@@ -1,7 +1,7 @@
 import { CDN_URL } from "../utils/constants";
 
-const RestaurantCard = ({resData}) => {
-  const {name,cloudinaryImageId,avgRating,sla,cuisines} = resData.info;
+const RestaurantCard = ({ resData }) => {
+  const { name, cloudinaryImageId, avgRating, sla, cuisines } = resData.info;
   return (
     <div className="res-card flex flex-col w-70 h-100 overflow-hidden shadow-xl hover:shadow-2xl transition-shadow rounded-3xl">
       <img
@@ -12,9 +12,22 @@ const RestaurantCard = ({resData}) => {
       <h3 className="px-2 mt-4 mb-2 font-semibold text-xl">{name}</h3>
       <h4 className="px-2 opacity-50">{cuisines.join(", ")}</h4>
       <h4 className="px-2 mt-2">{avgRating}★</h4>
-      <h4 className="px-2 bg-green-300 w-fit rounded self-center">{sla.deliveryTime} minutes</h4>
+      <h4 className="px-2 bg-green-300 w-fit rounded self-center">
+        {sla.deliveryTime} minutes
+      </h4>
     </div>
   );
 };
 
-export default RestaurantCard
+export default RestaurantCard;
+
+// export const withPromotedCard = (RestaurantCard) => {
+//   return (props) => {
+//     return (
+//       <>
+//         <lable>Promoted</lable>
+//         <RestaurantCard {...props} />
+//       </>
+//     );
+//   };
+// };
