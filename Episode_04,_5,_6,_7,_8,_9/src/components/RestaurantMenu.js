@@ -51,10 +51,10 @@ const RestaurantMenu = () => {
           </div>
         </div>
       </div>
-      <div>
-        <h1>Menu</h1>
+      <div className="w-full h-20 flex justify-center items-center">
+        <h1 className="text-2xl font-semibold bg-yellow-300 px-2 rounded">Menu</h1>
       </div>
-      {categories.map((category,index) => {
+      {categories.length === 0 || !categories ? "No data found." : categories.map((category,index) => {
         return (
           <RestaurantMenuListing
           

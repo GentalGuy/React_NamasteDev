@@ -15,6 +15,8 @@ const RestaurantMenuListing = ({ data }) => {
         </div>
         {categories &&
           categories.map((category, index) => {
+
+
             return (
               <div
               onClick={() => handleClick(index)}
@@ -27,7 +29,8 @@ const RestaurantMenuListing = ({ data }) => {
                   </h2>
                   <span className="text-4xl font-semibold">˅</span>
                 </div>
-                {seeLists === index && <ItemsList data={category.itemCards} />}
+                
+                {seeLists === index &&  <ItemsList data={category.itemCards} />}
               </div>
             );
           })}
