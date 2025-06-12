@@ -1,7 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import { Link, useNavigate } from "react-router";
 import useInternetCheck from "../utils/useInternetCheck";
-import { use } from "react";
+import { useSelector } from "react-redux";
 const Header = () => {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
@@ -10,6 +10,9 @@ const Header = () => {
     navigate("/login");
   };
   const checkInternet = useInternetCheck();
+
+  const cartItems = useSelector((store) => store.cart.items)
+  console.log(cartItems)
   return (
     <div className="header h-30 flex justify-between items-center shadow-xl">
       <div className="logo-container h-full flex justify-center items-center overflow-hidden">
@@ -29,7 +32,7 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart-{cartItems.length} </Link>
           </li>
           <li>
             <Link to="/grocery">Grocery</Link>

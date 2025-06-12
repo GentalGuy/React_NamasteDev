@@ -11,14 +11,19 @@ import Login from "../src/components/Login";
 import Register from "../src/components/Register";
 import ProtectedRoutes from "./services/ProtectedRoutes";
 import { Suspense, lazy } from "react";
-const Grocery = lazy(() => import("./components/Grocery"));
+import {Provider} from "react-redux";
+import appStore from "./utils/appStore";
 
+
+const Grocery = lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
   return (
+   
     <div className="app">
       <Header />
       <Outlet />
     </div>
+  
   );
 };
 
@@ -75,4 +80,4 @@ const appRouter = createBrowserRouter([
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(<Provider store={appStore}><RouterProvider router={appRouter} /></Provider>);

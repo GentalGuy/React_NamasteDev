@@ -1,5 +1,12 @@
+import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
+import { addItems } from "../utils/cardSlice";
 const ItemListDetails = ({ item }) => {
+  const dispatch = useDispatch();
+
+  const handleItems = (item) => {
+    dispatch(addItems(item))
+  }
   const { imageId, name, defaultPrice, description, price } = item.card.info;
   return (
     <div className="flex justify-between p-4 border-b-1 border-gray-200 pb-10 ">
@@ -15,7 +22,7 @@ const ItemListDetails = ({ item }) => {
           className="min-w-[156px] max-w-[157px] h-[174px] rounded-2xl object-cover"
           src={CDN_URL + imageId}
         />
-        <button className="absolute left-[50%] -translate-x-[50%] cursor-pointer -bottom-[10%] px-12 py-2 bg-white  rounded-xl border-1 border-gray-400 text-green-600 font-bold hover:bg-gray-200">
+        <button onClick={() => handleItems(item)} className="absolute left-[50%] -translate-x-[50%] cursor-pointer -bottom-[10%] px-12 py-2 bg-white  rounded-xl border-1 border-gray-400 text-green-600 font-bold hover:bg-gray-200">
           ADD
         </button>
       </div>
