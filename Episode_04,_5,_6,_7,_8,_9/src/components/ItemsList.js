@@ -9,7 +9,6 @@ const ItemsList = ({ data }) => {
         data.map((item) => {
           const { id, ribbon } = item.card.info;
           const {text} = ribbon
-          console.log(item.card)
 
           return text ? (
             <Promoted key={id} item={item} />

@@ -6,8 +6,9 @@ const ItemListDetails = ({ item }) => {
 
   const handleItems = (item) => {
     dispatch(addItems(item))
+    console.log(item)
   }
-  const { imageId, name, defaultPrice, description, price } = item.card.info;
+  const { imageId, name, defaultPrice, description, price } = item?.card?.info || {};
   return (
     <div className="flex justify-between p-4 border-b-1 border-gray-200 pb-10 ">
       <div>

@@ -12,7 +12,6 @@ const Header = () => {
   const checkInternet = useInternetCheck();
 
   const cartItems = useSelector((store) => store.cart.items)
-  console.log(cartItems)
   return (
     <div className="header h-30 flex justify-between items-center shadow-xl">
       <div className="logo-container h-full flex justify-center items-center overflow-hidden">
