@@ -6,7 +6,10 @@ const Cart = () => {
   const dispatch = useDispatch();
   const handleCart = () => {
     dispatch(clearItems());
+
   };
+  console.log(cartItems)
+
   return (
     <div className="w-6/12 mx-auto flex flex-col justify-start items-center">
       <div className="flex flex-col items-center">
@@ -20,7 +23,7 @@ const Cart = () => {
       </div>
       <div>
         {cartItems.length === 0 ? <h1 className="text-center mt-70 animate-pulse text-4xl">Cart is Empty</h1> : cartItems.map((item, index) => {
-          return <ItemListDetails key={index} item={item} />;
+          return <ItemListDetails key={index} newItem={item} />
         })}
       </div>
     </div>
